@@ -28,17 +28,17 @@
       <td id="incBarDec" class="bg-transparent border-bottom border-end"><?=$info["inc_dec"]?></td>
    </tr>
    <tr>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
-      <td class="incBar bg-transparent border-0"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphJan" style="height: 300px;"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphFeb"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphMar"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphApr"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphMay"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphJun"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphJul"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphAug"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphSep"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphOct"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphNov"></td>
+      <td class="incBar bg-transparent border-3" id="incGraphDec"></td>
    </tr>
   </table>

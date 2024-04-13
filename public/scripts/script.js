@@ -11,7 +11,19 @@ const incBarSep = document.getElementById("incBarSep");
 const incBarOct = document.getElementById("incBarOct");
 const incBarNov = document.getElementById("incBarNov");
 const incBarDec = document.getElementById("incBarDec");
-
+const incGraphJan = document.getElementById('incGraphJan');
+const incGraphFeb = document.getElementById('incGraphFeb');
+const incGraphMar = document.getElementById('incGraphMar');
+const incGraphApr = document.getElementById('incGraphApr');
+const incGraphMay = document.getElementById('incGraphMay');
+const incGraphJun = document.getElementById('incGraphJun');
+const incGraphJul = document.getElementById('incGraphJul');
+const incGraphAug = document.getElementById('incGraphAug');
+const incGraphSep = document.getElementById('incGraphSep');
+const incGraphOct = document.getElementById('incGraphOct');
+const incGraphNov = document.getElementById('incGraphNov');
+const incGraphDec = document.getElementById('incGraphDec');
+let incBarMaker = [];
 
 let allBars = [
     incBarJan,
@@ -28,10 +40,43 @@ let allBars = [
     incBarDec
 ];
 
-for (x of allBars) {
-    console.log(x.textContent, " good");
+let allGraphs = [
+    incGraphJan,
+    incGraphFeb,
+    incGraphMar,
+    incGraphApr,
+    incGraphMay,
+    incGraphJun,
+    incGraphJul,
+    incGraphAug,
+    incGraphSep,
+    incGraphOct,
+    incGraphNov,
+    incGraphDec    
+];
+
+for (let i = 0; i < allBars.length; i++) {
+    allGraphs[i].value = allBars[i].textContent
 }
 
+for (x of allGraphs) {
+console.log(parseInt(x.value));
+if (parseInt(x.value)/1000 > 50) {
+    x.classList.remove("bg-transparent");
+    x.classList.add("bg-success");
+    x.classList.add("h-25");
+}else if (parseInt(x.value)/1000 > 30) {
+    x.classList.remove("bg-transparent");
+    x.classList.add("bg-warning");
+}else {
+    x.classList.remove("bg-transparent");
+    x.classList.add("bg-danger");
+}
+}
+    for (x of allGraphs) {
+        incBarMaker.push(parseInt(x.value));
+    }
+console.log(incBarMaker);
 
 
 
