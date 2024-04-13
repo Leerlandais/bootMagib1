@@ -42,7 +42,8 @@
             include("inc/single.inc.php");
         }else {
         ?>
-        <h3>Pick a company to view their income for the year 2023</h3>
+        <div class="container h-50 border border-primary">
+
     <?php
 }
         ?>

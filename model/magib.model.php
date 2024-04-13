@@ -51,7 +51,8 @@ function getAllInfoForAll(PDO $db) {
     JOIN `comp_has_inc` `h`
     ON `c`.`id_comp` = `h`.`has_comp`
     JOIN `income` `i`
-    ON `h`.`has_inc` = `i`.`id_inc`";
+    ON `h`.`has_inc` = `i`.`id_inc`
+    ORDER BY `c`.`nom_comp`";
 
 try{
     $query = $db->query($sql);

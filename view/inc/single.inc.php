@@ -5,7 +5,9 @@ foreach ($allInfo as $info) {
    <h3><?=$info["nom"]?></h3>
 <?php
 }
+
+include("table.inc.php");
 ?>
-    </div>
+
 
       </div> <!-- end container carousel -->

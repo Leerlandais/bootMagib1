@@ -8,13 +8,20 @@ $i = 0;
             $i++;
         ?>
           <div class="carousel-item active">
-            <img src="1.jpg" alt="<?=$info["nom"]?>" class="d-block w-100" />
+          <h3><?=$info["nom"]?></h3>
+
+            <?php
+          include("table.inc.php");
+          ?>
           </div>
           <?php
         }else {
             ?>
             <div class="carousel-item">
-              <img src="1.jpg" alt="<?=$info["nom"]?>" class="d-block w-100" />
+            <h3><?=$info["nom"]?></h3>
+            <?php
+          include("table.inc.php");
+          ?>
             </div>
             <?php
         }
