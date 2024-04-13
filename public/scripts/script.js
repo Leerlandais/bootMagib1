@@ -23,8 +23,9 @@ const incGraphSep = document.getElementById('incGraphSep');
 const incGraphOct = document.getElementById('incGraphOct');
 const incGraphNov = document.getElementById('incGraphNov');
 const incGraphDec = document.getElementById('incGraphDec');
-let incBarMaker = [];
+const diaporama = document.getElementById("diaporama");
 
+function makeGraphs() {
 let allBars = [
     incBarJan,
     incBarFeb,
@@ -64,7 +65,7 @@ console.log(parseInt(x.value));
 if (parseInt(x.value)/1000 > 50) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-success");
-    x.classList.add("h-25");
+    
 }else if (parseInt(x.value)/1000 > 30) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-warning");
@@ -73,12 +74,14 @@ if (parseInt(x.value)/1000 > 50) {
     x.classList.add("bg-danger");
 }
 }
-    for (x of allGraphs) {
-        incBarMaker.push(parseInt(x.value));
-    }
-console.log(incBarMaker);
-
-
+allBars = [];
+allGraphs = [];
+console.log(allBars);
+}
+makeGraphs();
+diaporama.addEventListener('transitionend', function (){
+    makeGraphs();
+});
 
 
 window.addEventListener('resize', displayScreenWidth); 

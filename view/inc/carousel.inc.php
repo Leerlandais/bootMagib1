@@ -1,6 +1,6 @@
 <div class="container h-50 border border-primary">
     <div id="diaporama" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" id="diaporama2">
+        <div class="carousel-inner">
 <?php
 $i = 0;
     foreach($allInfo as $info) {

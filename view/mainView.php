@@ -21,6 +21,7 @@
                 <h3 class="text-warning fs-5">Click a company to see their income</h3>
                     <ul class="list-group d-flex flex-row justify-content-center">
                 <?php
+                
         foreach($compNames as $names) {
 ?>
                        <a href="?comp=<?=$names["slug"]?>"><li class="list-group-item bg-transparent border-0"><?=$names["nom"]?></li></a> 
