@@ -24,13 +24,15 @@ if(!isset($_SESSION['monID']) ||
 
 <?php
         include('inc/header.inc.php');
+                
         if ($_SESSION["pageCount"] < 1) {
             $_SESSION["pageCount"]++;
-            echo ($_SESSION["message"]);
-        }
+        
         ?>
-
-    
+        <div class="alert alert-success"><?=$_SESSION["message"]?></div>
+        <?php
+    }
+    ?>
     <div class="container h-auto">
         <section class="border border-secondary rounded-pill shadow h-50 p-3 my-2">
             <div class="row">
