@@ -8,24 +8,18 @@
     <title><?=$title?></title>
 </head>
 <body>
-    <div class="container h-25">
-        <header class="h-75 shadow border-end border-bottom border-dark-subtle border-2 rounded-4 mt-5">
-            <div class="row">
-                <div class="col">
-                    <h1 class="text-primary text-decoration-underline fs-3 px-5 py-2">Bienvenue dans mon expérience avec Bootstrap, PHP, JavaScript, SQL et, bien sûr, un peu de HTML et CSS</h1>
-                    <h2 class="text-info">&lpar;J'essaierai de faire la majorité du style avec BS&rpar;</h2>
-                </div>
-            </div>
-        </header>
-    </div> <!-- end container header -->
-        
+
+<?php
+        include('inc/header.inc.php');
+        ?>
+
     
-    <div class="container h-50">
-        <main class="border border-danger h-75 p-3">
+    <div class="container h-auto">
+        <section class="border border-secondary rounded-pill shadow h-50 p-3 my-2">
             <div class="row">
                 <div class="col">
                 <h3 class="text-warning fs-5">Click a company to see their income</h3>
-                    <ul class="list-group">
+                    <ul class="list-group d-flex flex-row justify-content-center">
                 <?php
         foreach($compNames as $names) {
 ?>
@@ -33,28 +27,29 @@
 <?php
 }
 ?>
-<?php
-        if(isset($allInfo)){
-            var_dump($allInfo);
-        }
-        ?>
+
                         <a href="?comp=all"><li class="list-group-item bg-transparent border-0">All</li></a>
                     </ul>
                 </div>
             </div>
-        </main>
-    </div> <!-- end container main -->    
-    
-    
-    <div class="container h-25 mt-3">
-        <footer class="h-50 border-top border-start border-2 border-warning-subtle">
-            <div class="row">
-                <div class="col d-flex justify-content-center align-items-center">
-                <h4 class="text-warning fs-3">&lpar;Need a footer here&rpar;</h4>
-                </div>
-            </div>
-        </footer>
-    </div> <!-- end container footer -->         
+        </section>
+    </div> <!-- end container section -->    
+
+    <?php
+        if (isset($_GET["comp"]) && $_GET["comp"] === "all") {
+            include("inc/carousel.inc.php");
+        }else if (isset($_GET["comp"]) && $_GET["comp"] != "all") {
+            include("inc/single.inc.php");
+        }else {
+        ?>
+        <h3>Pick a company to view their income for the year 2023</h3>
+    <?php
+}
+        ?>
+
+      <?php
+        include("inc/footer.inc.php");
+        ?>
             
             <h6 id="screenwidth"></h6>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -66,14 +61,5 @@
 
 
 
-<?php
-        
-        ?>
 
-<?php
-        
-        ?>
 
-<?php
-        
-        ?>
