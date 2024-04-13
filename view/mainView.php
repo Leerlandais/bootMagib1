@@ -33,6 +33,12 @@
 <?php
 }
 ?>
+<?php
+        if(isset($allInfo)){
+            var_dump($allInfo);
+        }
+        ?>
+                        <a href="?comp=all"><li class="list-group-item bg-transparent border-0">All</li></a>
                     </ul>
                 </div>
             </div>
@@ -58,9 +64,7 @@
 
 
 
-<?php
-        
-        ?>
+
 
 <?php
         

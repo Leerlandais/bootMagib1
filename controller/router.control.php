@@ -3,6 +3,3 @@
 $title = 'Bienvenu à mon experience';
 include ("../view/mainView.php");
 
-if (isset($_GET["comp"])) {
-    getAllInfo($db, $_GET["comp"]);
-}
