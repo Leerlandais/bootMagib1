@@ -27,33 +27,33 @@
                     <h3 class="text-primary fs-5">And Income Per Month</h3>
                     <div class="d-flex flex-row">
                    <div class="d-flex flex-column w-50 align-items-center me-4">
-                    <label for="incomeJan">Jan</label>
-                    <input type="text" name="incomeJan" id="">
-                    <label for="incomeFeb">Fev</label>
-                    <input type="text" name="incomeFeb" id="">
-                    <label for="incomeMar">Mars</label>
-                    <input type="text" name="incomeMar" id="">
-                    <label for="incomeApr">Avr</label>
-                    <input type="text" name="incomeApr" id="">
-                    <label for="incomeMay">Mai</label>
-                    <input type="text" name="incomeMay" id="">
-                    <label for="incomeJun">Jun</label>
-                    <input type="text" name="incomeJun" id="">
+                    <label for="inc_jan">Jan</label>
+                    <input type="text" name="inc_jan" id="">
+                    <label for="inc_feb">Fev</label>
+                    <input type="text" name="inc_feb" id="">
+                    <label for="inc_mar">Mars</label>
+                    <input type="text" name="inc_mar" id="">
+                    <label for="inc_apr">Avr</label>
+                    <input type="text" name="inc_apr" id="">
+                    <label for="inc_may">Mai</label>
+                    <input type="text" name="inc_may" id="">
+                    <label for="inc_jun">Jun</label>
+                    <input type="text" name="inc_jun" id="">
                     </div>     
                     
                     <div class="d-flex flex-column w-50 align-items-center ms-4">
-                    <label for="incomeJul">Jul</label>
-                    <input type="text" name="incomeJul" id="">
-                    <label for="incomeAug">Aout</label>
-                    <input type="text" name="incomeAug" id="">
-                    <label for="incomeSep">Sep</label>
-                    <input type="text" name="incomeSep" id="">
-                    <label for="incomeOct">Oct</label>
-                    <input type="text" name="incomeOct" id="">
-                    <label for="incomeNov">Nov</label>
-                    <input type="text" name="incomeNov" id="">
-                    <label for="incomeDec">Déc</label>
-                    <input type="text" name="incomeDec" id="">
+                    <label for="inc_jul">Jul</label>
+                    <input type="text" name="inc_jul" id="">
+                    <label for="inc_aug">Aout</label>
+                    <input type="text" name="inc_aug" id="">
+                    <label for="inc_sep">Sep</label>
+                    <input type="text" name="inc_sep" id="">
+                    <label for="inc_oct">Oct</label>
+                    <input type="text" name="inc_oct" id="">
+                    <label for="inc_nov">Nov</label>
+                    <input type="text" name="inc_nov" id="">
+                    <label for="inc_dec">Déc</label>
+                    <input type="text" name="inc_dec" id="">
                 </div>
             </div>
             <button type="submit">Add</button>
