@@ -24,6 +24,7 @@ const incGraphOct = document.getElementById('incGraphOct');
 const incGraphNov = document.getElementById('incGraphNov');
 const incGraphDec = document.getElementById('incGraphDec');
 const diaporama = document.getElementById("diaporama");
+const moyenneTag = document.getElementById("moyenneTag");
 
 function makeGraphs() {
 let allBars = [
@@ -63,6 +64,7 @@ for (let i = 0; i < allBars.length; i++) {
 
 aveIncome = aveIncome/12;
 aveIncome = Math.round(aveIncome * 100) / 100
+moyenneTag.textContent = 'Moyenne : €' + aveIncome + "/mois";
 
 console.log(aveIncome);
 
@@ -82,15 +84,17 @@ for (x of allGraphs) {
     }
 
 }
-allBars = [];
-allGraphs = [];
+
 }
 makeGraphs();
-/*
+
 diaporama.addEventListener('transitionend', function (){
-    makeGraphs();
+    allBars = [];
+    allGraphs = [];
+    console.log(allGraphs);
+        makeGraphs();
 });
-*/
+
 /*
 window.addEventListener('resize', displayScreenWidth); 
 

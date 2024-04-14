@@ -45,7 +45,7 @@
       <div class="row">
 <div class="col">
       <ul class="list-group d-flex flex-row-reverse mt-2">
-         <li class="list-group-item w-25 mx-2 border bg-info">Moyenne : <span id="moyenneTag"></span></li>
+         <li class="list-group-item w-25 mx-2 border bg-info"><span id="moyenneTag"></span></li>
          <li class="list-group-item w-25 mx-2 border bg-success">Bien &lpar;> 60%&rpar; : <span id="bienTag"></span></li>
          <li class="list-group-item w-25 mx-2 border bg-warning">Attention &lpar;30-45%&rpar; : <span id="attTag"></span></li>
          <li class="list-group-item w-25 mx-2 border bg-danger">Danger! &lpar;< 30%&rpar;: <span id="dangTag"></span></li>
@@ -53,4 +53,4 @@
       
       
    </div>
-   <div class="row">
+   </div>
