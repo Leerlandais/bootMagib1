@@ -22,6 +22,7 @@ if(!isset($_SESSION['monID']) ||
 </head>
 <body>
 
+    <div class="container h-auto">
 <?php
         include('inc/header.inc.php');
                 
@@ -29,11 +30,10 @@ if(!isset($_SESSION['monID']) ||
             $_SESSION["pageCount"]++;
         
         ?>
-        <div class="alert alert-success"><?=$_SESSION["message"]?></div>
+        <div class="alert alert-success mt-2"><?=$_SESSION["message"]?></div>
         <?php
     }
     ?>
-    <div class="container h-auto">
         <section class="border border-secondary rounded-pill shadow h-50 p-3 my-2">
             <div class="row">
                 <div class="col">
@@ -43,7 +43,7 @@ if(!isset($_SESSION['monID']) ||
                 
         foreach($compNames as $names) {
 ?>
-                       <a href="?comp=<?=$names["slug"]?>"><li class="list-group-item bg-transparent border-0"><?=$names["nom"]?></li></a> 
+                       <a href="?comp=<?=$names["slug"]?>" title="added by <?=$names["added_by"]?>"><li class="list-group-item bg-transparent border-0"><?=$names["nom"]?></li></a> 
 <?php
 }
 ?>

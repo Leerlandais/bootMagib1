@@ -3,7 +3,7 @@
 
 function getCompNames(PDO $db) : array | string {
     
-    $sql = "SELECT nom_comp AS nom, slug_comp AS slug
+    $sql = "SELECT nom_comp AS nom, slug_comp AS slug, added_by
             FROM company
             ORDER BY nom ASC";
 try{
@@ -67,10 +67,8 @@ try{
 
 
 function addNewCompany(PDO $db, $inputs) {
-    foreach($inputs as $inp => $val)
-    if($inp[1] === "n") {
-     $newInp[$inp] = $val;
-    }
+
+   // var_dump($inputs);
     
     $sqlInc = "INSERT INTO `income`(`id_inc`, `inc_jan`, `inc_feb`, `inc_mar`, `inc_apr`, `inc_may`, `inc_jun`, `inc_jul`, `inc_aug`, `inc_sep`, `inc_oct`, `inc_nov`, `inc_dec`) 
                 VALUES (NULL, :jan, :feb, :mar, :apr, :may, :jun, :jul, :aug, :sep, :oct, :nov, :decem)";
@@ -96,11 +94,12 @@ function addNewCompany(PDO $db, $inputs) {
     $stmtHas->bindParam(':comp_id', $inputs["idForNew"]);
     $stmtHas->bindParam(':inc_id', $inputs["idForNew"]);
 
-    $sqlName = "INSERT INTO `company`(`id_comp`, `nom_comp`, `slug_comp`) 
-                VALUES (NULL, :compName, :compSlug)";
+    $sqlName = "INSERT INTO `company`(`id_comp`, `nom_comp`, `slug_comp`, `added_by`) 
+                VALUES (NULL, :compName, :compSlug, :addBy)";
     $stmtName = $db->prepare($sqlName);
     $stmtName->bindParam(':compName', $inputs["compName"]);
-    $stmtName->bindParam(':compSlug', $inputs["compName"]);
+    $stmtName->bindParam(':compSlug', $inputs["compSlug"]);
+    $stmtName->bindParam(':addBy', $inputs['addedBy']);
 
     try {
         $stmt->execute();
@@ -109,7 +108,8 @@ function addNewCompany(PDO $db, $inputs) {
         $db->commit();
         return true;
     }catch(Exception){
-        $result = "Sorry, couldn't add company income";
-        return false;
+        $errorMessage = "Sorry, couldn't add company income";
+        return $errorMessage;
     }
+    
 }

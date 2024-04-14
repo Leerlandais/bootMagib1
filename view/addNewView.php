@@ -25,6 +25,9 @@ if(!isset($_SESSION['monID']) ||
 <?php
         include('inc/header.inc.php');
         $compCount = count($compNames) + 1;
+        if(isset($errorMessage)) {
+            echo $errorMessage;
+        }
         ?>
     <a href="./">Retour</a>
     
@@ -35,8 +38,10 @@ if(!isset($_SESSION['monID']) ||
                
             <form action="" method="POST" class="pt-0">
                 <input type="text" name="idForNew" id="" value="<?=$compCount?>"  class="d-none">
+                <input type="text" name="addedBy" id="" value="<?=$_SESSION["name"]?>"  class="">
+                <input type="text" name="compSlug" id="compSlugger" value="<?=$compCount?>"  class="d-none">
                 <label for="compName"></label>
-                    <input type="text" name="compName" id="" class="w-100">
+                    <input type="text" name="compName" id="compNameInp" class="w-100">
                     <h3 class="text-primary fs-5">And Income Per Month</h3>
                     <div class="d-flex flex-row">
                    <div class="d-flex flex-column w-50 align-items-center me-4">

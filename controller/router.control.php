@@ -15,6 +15,9 @@ if (isset($_GET["p"])) {
             $title = "Log In Here";
             include ("../view/login.php");
             break;
+        case "unlog" :
+            include ("../controller/unlog.control.php");
+            break;
         default :
         $title = "Page Not Found";
         include("../view/error404.php");

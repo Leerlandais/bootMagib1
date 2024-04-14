@@ -61,7 +61,7 @@ for (let i = 0; i < allBars.length; i++) {
 }
 
 for (x of allGraphs) {
-console.log(parseInt(x.value));
+// console.log(parseInt(x.value));
 if (parseInt(x.value)/1000 > 50) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-success");
@@ -76,13 +76,14 @@ if (parseInt(x.value)/1000 > 50) {
 }
 allBars = [];
 allGraphs = [];
-console.log(allBars);
+// console.log(allBars);
 }
 makeGraphs();
+/*
 diaporama.addEventListener('transitionend', function (){
     makeGraphs();
 });
-
+*/
 
 window.addEventListener('resize', displayScreenWidth); 
 

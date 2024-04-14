@@ -24,6 +24,8 @@ if(isset($_POST["inc_jan"]) &&
     isset($_POST["inc_nov"]) &&
     isset($_POST["inc_dec"]) &&
     isset($_POST["idForNew"]) &&
+    isset($_POST["compSlug"]) &&
+    isset($_POST["addedBy"]) &&
     isset($_POST["compName"]))
     {
         foreach ($_POST as $input => $amount) {

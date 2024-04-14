@@ -6,5 +6,7 @@
                     <h2 class="text-info">&lpar;J'essaierai de faire la majorité du style avec BS&rpar;</h2>
                 </div>
             </div>
+            <a href="?p=unlog">Déconnexion de la session : <?=$_SESSION["name"]?></a>
         </header>
+   
     </div> <!-- end container header -->
