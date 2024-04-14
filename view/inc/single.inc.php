@@ -1,4 +1,4 @@
-<div class="container h-50 border border-primary">
+<div class="container h-50 border border-primary-subtle shadow rounded-5">
    <?php
 foreach ($allInfo as $info) {
     ?>

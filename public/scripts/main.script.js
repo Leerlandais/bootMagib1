@@ -79,7 +79,6 @@ if (parseInt(x.value) > aveIncome) {
 }
 allBars = [];
 allGraphs = [];
-// console.log(allBars);
 }
 makeGraphs();
 /*
@@ -87,7 +86,7 @@ diaporama.addEventListener('transitionend', function (){
     makeGraphs();
 });
 */
-
+/*
 window.addEventListener('resize', displayScreenWidth); 
 
 function displayScreenWidth() { 
@@ -96,3 +95,5 @@ function displayScreenWidth() {
     screenwidth.innerHTML = 'The screen width is: ' + theWidth;
 }
 displayScreenWidth();
+
+*/

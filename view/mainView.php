@@ -62,7 +62,7 @@ if(!isset($_SESSION['monID']) ||
             include("inc/single.inc.php");
         }else {
         ?>
-        <div class="container h-50 border border-primary">
+        <div class="container h-50 border border-primary-subtle shadow rounded-5">
 
     <?php
 }
@@ -72,7 +72,7 @@ if(!isset($_SESSION['monID']) ||
         include("inc/footer.inc.php");
         ?>
             
-            <h6 id="screenwidth"></h6>
+  <!--          <h6 id="screenwidth"></h6>          -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
             <script src="scripts/main.script.js"></script>
 </body>

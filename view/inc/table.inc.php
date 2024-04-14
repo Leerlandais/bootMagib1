@@ -28,37 +28,21 @@
       <td id="incBarDec" class="bg-transparent border-bottom border-end"><?=$info["inc_dec"]?></td>
    </tr>
   </table>
-      <div class="row w-100 px-3">
-         <div class="col incBar border border-3 py-5" id="incGraphJan">Jan</div>
-         <div class="col incBar border border-3 py-5" id="incGraphFeb">Feb</div>
-         <div class="col incBar border border-3 py-5" id="incGraphMar">Mar</div>
-         <div class="col incBar border border-3 py-5" id="incGraphApr">Apr</div>
-         <div class="col incBar border border-3 py-5" id="incGraphMay">May</div>
-         <div class="col incBar border border-3 py-5" id="incGraphJun">Jun</div>
-         <div class="col incBar border border-3 py-5" id="incGraphJul">Jul</div>
-         <div class="col incBar border border-3 py-5" id="incGraphAug">Aug</div>
-         <div class="col incBar border border-3 py-5" id="incGraphSep">Sep</div>
-         <div class="col incBar border border-3 py-5" id="incGraphOct">Oct</div>
-         <div class="col incBar border border-3 py-5" id="incGraphNov">Nov</div>
-         <div class="col incBar border border-3 py-5" id="incGraphDec">Dec</div>
+      <div class="w-100 px-3 d-flex flex-row">
+         <div class="incBar border border-3 py-5 w-50" id="incGraphJan">Jan</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphFeb">Feb</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphMar">Mar</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphApr">Apr</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphMay">May</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphJun">Jun</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphJul">Jul</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphAug">Aug</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphSep">Sep</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphOct">Oct</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphNov">Nov</div>
+         <div class="incBar border border-3 py-5 w-50" id="incGraphDec">Dec</div>
       </div>
 
 
-  <!--
-      <tr style="height: 250px;">
-      <td class="incBar bg-transparent border-3" id="incGraphJan"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphFeb"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphMar"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphApr"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphMay"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphJun"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphJul"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphAug"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphSep"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphOct"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphNov"></td>
-      <td class="incBar bg-transparent border-3" id="incGraphDec"></td>
-   </tr>}
 
-    -->
   

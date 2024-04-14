@@ -1,4 +1,4 @@
-<div class="container h-50 border border-primary">
+<div class="container h-50 border border-primary-subtle shadow rounded-5">
     <div id="diaporama" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
 <?php

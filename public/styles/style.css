@@ -6,3 +6,9 @@ body {
     height: 100vh;
     text-align: center;
     }
+
+    .chart-container {
+        width: 50%;
+        height: 50%;
+        margin: auto;
+      }
