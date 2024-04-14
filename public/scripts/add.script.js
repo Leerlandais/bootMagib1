@@ -1,8 +1,16 @@
 
 const compNameInp = document.getElementById('compNameInp');
 const compSlugger = document.getElementById("compSlugger");
+const addForm = document.getElementById("addForm");
+const subButton = document.getElementById('subButton');
+const myInput = document.querySelectorAll(".myInput");
 
-    compNameInp.addEventListener("input", updateSlug);
+addForm.addEventListener('submit', function(event) {                          
+    event.preventDefault();
+});
+
+compNameInp.addEventListener("input", updateSlug);
+subButton.addEventListener("click", validateInputs);
 
 
 function updateSlug() {
@@ -31,3 +39,24 @@ for (let i = 0; i < slugBefore.length; i++) {
 // console.log(slugAfter);
 }
 }
+
+
+function validateInputs() {
+    
+    for (x of myInput) {
+        if (!x.value || /[a-z]/.test(x.value) || /[A-Z]/.test(x.value) || /[!@#$%^"/=:'?<>&,;*()_+]/.test(x.value)){
+            x.style.backgroundColor = "red";
+            x.placeholder = "Remplissez correctement ce champ";
+            return false;
+        }else if (!compNameInp.value) {
+            compNameInp.style.backgroundColor = "red";
+            return false;
+        }else {
+            x.style.backgroundColor = "white";
+            compNameInp.style.backgroundColor = "white";
+        }
+    }
+    addForm.submit();
+
+}
+

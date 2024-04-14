@@ -55,18 +55,21 @@ let allGraphs = [
     incGraphNov,
     incGraphDec    
 ];
-
+let aveIncome = 0;
 for (let i = 0; i < allBars.length; i++) {
     allGraphs[i].value = allBars[i].textContent
+    aveIncome += parseInt(allGraphs[i].value);
 }
 
+aveIncome = aveIncome/12;
+console.log(aveIncome);
 for (x of allGraphs) {
-// console.log(parseInt(x.value));
-if (parseInt(x.value)/1000 > 50) {
+ 
+if (parseInt(x.value) > aveIncome) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-success");
     
-}else if (parseInt(x.value)/1000 > 30) {
+}else if (parseInt(x.value) > aveIncome*0.75) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-warning");
 }else {

@@ -36,9 +36,9 @@ if(!isset($_SESSION['monID']) ||
    
                 <h3 class="text-warning fs-2 m-0">Add Company Name</h3>
                
-            <form action="" method="POST" class="pt-0">
-                <input type="text" name="idForNew" id="" value="<?=$compCount?>"  class="d-none">
-                <input type="text" name="addedBy" id="" value="<?=$_SESSION["name"]?>"  class="">
+            <form action="" method="POST" class="pt-0" id="addForm">
+                <input type="text" name="idForNew" value="<?=$compCount?>"  class="d-none">
+                <input type="text" name="addedBy" value="<?=$_SESSION["name"]?>"  class="d-none">
                 <input type="text" name="compSlug" id="compSlugger" value="<?=$compCount?>"  class="d-none">
                 <label for="compName"></label>
                     <input type="text" name="compName" id="compNameInp" class="w-100">
@@ -46,35 +46,35 @@ if(!isset($_SESSION['monID']) ||
                     <div class="d-flex flex-row">
                    <div class="d-flex flex-column w-50 align-items-center me-4">
                     <label for="inc_jan">Jan</label>
-                    <input type="text" name="inc_jan" id="">
+                    <input type="text" name="inc_jan" class="myInput">
                     <label for="inc_feb">Fev</label>
-                    <input type="text" name="inc_feb" id="">
+                    <input type="text" name="inc_feb" class="myInput">
                     <label for="inc_mar">Mars</label>
-                    <input type="text" name="inc_mar" id="">
+                    <input type="text" name="inc_mar" class="myInput">
                     <label for="inc_apr">Avr</label>
-                    <input type="text" name="inc_apr" id="">
+                    <input type="text" name="inc_apr" class="myInput">
                     <label for="inc_may">Mai</label>
-                    <input type="text" name="inc_may" id="">
+                    <input type="text" name="inc_may" class="myInput">
                     <label for="inc_jun">Jun</label>
-                    <input type="text" name="inc_jun" id="">
+                    <input type="text" name="inc_jun" class="myInput">
                     </div>     
                     
                     <div class="d-flex flex-column w-50 align-items-center ms-4">
                     <label for="inc_jul">Jul</label>
-                    <input type="text" name="inc_jul" id="">
+                    <input type="text" name="inc_jul" class="myInput">
                     <label for="inc_aug">Aout</label>
-                    <input type="text" name="inc_aug" id="">
+                    <input type="text" name="inc_aug" class="myInput">
                     <label for="inc_sep">Sep</label>
-                    <input type="text" name="inc_sep" id="">
+                    <input type="text" name="inc_sep" class="myInput">
                     <label for="inc_oct">Oct</label>
-                    <input type="text" name="inc_oct" id="">
+                    <input type="text" name="inc_oct" class="myInput">
                     <label for="inc_nov">Nov</label>
-                    <input type="text" name="inc_nov" id="">
+                    <input type="text" name="inc_nov" class="myInput">
                     <label for="inc_dec">Déc</label>
-                    <input type="text" name="inc_dec" id="">
+                    <input type="text" name="inc_dec" class="myInput">
                 </div>
             </div>
-            <button type="submit">Add</button>
+            <button type="submit" id="subButton">Add</button>
             </form>
         </section>
     </div> <!-- end container section -->    
