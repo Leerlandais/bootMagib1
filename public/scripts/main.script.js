@@ -1,4 +1,24 @@
+const incBar = document.querySelectorAll(".incBar");
+const incGraph = document.querySelectorAll(".incGraph");
 
+console.log(incBar.length, incGraph.length);
+
+// AH OK. The problem is because it is taking ALL companies info (i.e. 12months*12companies = 144)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const incBarJan = document.getElementById("incBarJan");
 const incBarFeb = document.getElementById("incBarFeb");
 const incBarMar = document.getElementById("incBarMar");
@@ -117,3 +137,4 @@ if (parseInt(x.value) > aveIncome) {
     x.classList.add("bg-danger");
 }
 */
+
