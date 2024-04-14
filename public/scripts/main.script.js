@@ -62,20 +62,25 @@ for (let i = 0; i < allBars.length; i++) {
 }
 
 aveIncome = aveIncome/12;
+aveIncome = Math.round(aveIncome * 100) / 100
+
 console.log(aveIncome);
+
 for (x of allGraphs) {
- 
-if (parseInt(x.value) > aveIncome) {
-    x.classList.remove("bg-transparent");
-    x.classList.add("bg-success");
-    
-}else if (parseInt(x.value) > aveIncome*0.75) {
-    x.classList.remove("bg-transparent");
-    x.classList.add("bg-warning");
-}else {
-    x.classList.remove("bg-transparent");
-    x.classList.add("bg-danger");
-}
+    if (x.value < (aveIncome*1.1) && x.value > (aveIncome*0.9)) {
+        x.classList.remove("bg-transparent");
+        x.classList.add("bg-info");
+    }else if (x.value > (aveIncome*1.1)) {
+        x.classList.remove("bg-transparent");
+        x.classList.add("bg-success");
+    }else if (x.value > (aveIncome*0.6) && x.value < (aveIncome*0.9)) {
+        x.classList.remove("bg-transparent");
+        x.classList.add("bg-warning");
+    }else {
+        x.classList.remove("bg-transparent");
+        x.classList.add("bg-danger");
+    }
+
 }
 allBars = [];
 allGraphs = [];
@@ -96,4 +101,15 @@ function displayScreenWidth() {
 }
 displayScreenWidth();
 
+if (parseInt(x.value) > aveIncome) {
+    x.classList.remove("bg-transparent");
+    x.classList.add("bg-success");
+    
+}else if (parseInt(x.value) > aveIncome*0.75) {
+    x.classList.remove("bg-transparent");
+    x.classList.add("bg-warning");
+}else {
+    x.classList.remove("bg-transparent");
+    x.classList.add("bg-danger");
+}
 */
