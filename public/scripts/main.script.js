@@ -24,6 +24,7 @@ const incGraphOct = document.getElementById('incGraphOct');
 const incGraphNov = document.getElementById('incGraphNov');
 const incGraphDec = document.getElementById('incGraphDec');
 const diaporama = document.getElementById("diaporama");
+const moyenneTag = document.getElementById("moyenneTag");
 
 function makeGraphs() {
 let allBars = [
@@ -62,9 +63,48 @@ for (let i = 0; i < allBars.length; i++) {
 }
 
 aveIncome = aveIncome/12;
+aveIncome = Math.round(aveIncome * 100) / 100
+moyenneTag.textContent = 'Moyenne : €' + aveIncome + "/mois";
+
 console.log(aveIncome);
+
 for (x of allGraphs) {
- 
+    if (x.value < (aveIncome*1.1) && x.value > (aveIncome*0.9)) {
+        x.classList.remove("bg-transparent");
+        x.classList.add("bg-info");
+    }else if (x.value > (aveIncome*1.1)) {
+        x.classList.remove("bg-transparent");
+        x.classList.add("bg-success");
+    }else if (x.value > (aveIncome*0.6) && x.value < (aveIncome*0.9)) {
+        x.classList.remove("bg-transparent");
+        x.classList.add("bg-warning");
+    }else {
+        x.classList.remove("bg-transparent");
+        x.classList.add("bg-danger");
+    }
+
+}
+
+}
+makeGraphs();
+
+diaporama.addEventListener('transitionend', function (){
+    allBars = [];
+    allGraphs = [];
+    console.log(allGraphs);
+        makeGraphs();
+});
+
+/*
+window.addEventListener('resize', displayScreenWidth); 
+
+function displayScreenWidth() { 
+    const screenwidth = document.getElementById("screenwidth");
+    let theWidth = window.innerWidth;                                             
+    screenwidth.innerHTML = 'The screen width is: ' + theWidth;
+}
+displayScreenWidth();
+
 if (parseInt(x.value) > aveIncome) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-success");
@@ -76,24 +116,4 @@ if (parseInt(x.value) > aveIncome) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-danger");
 }
-}
-allBars = [];
-allGraphs = [];
-}
-makeGraphs();
-/*
-diaporama.addEventListener('transitionend', function (){
-    makeGraphs();
-});
-*/
-/*
-window.addEventListener('resize', displayScreenWidth); 
-
-function displayScreenWidth() { 
-    const screenwidth = document.getElementById("screenwidth");
-    let theWidth = window.innerWidth;                                             
-    screenwidth.innerHTML = 'The screen width is: ' + theWidth;
-}
-displayScreenWidth();
-
 */

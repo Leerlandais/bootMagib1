@@ -27,8 +27,9 @@ $i = 0;
         }
           }
           ?>
-        </div>
-    </div>
+        </div> <!-- end inner -->
+    </div>  <!-- end carousel -->
+
         <button class="carousel-control-prev" type="button" data-bs-target="#diaporama" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
         </button>
