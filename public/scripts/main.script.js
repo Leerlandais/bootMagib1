@@ -1,62 +1,80 @@
+const incBar = document.querySelectorAll(".incBar");
+const incGraph = document.querySelectorAll(".incGraph");
+const moyenneTag = document.getElementById('moyenneTag');
 
-const incBarJan = document.getElementById("incBarJan");
-const incBarFeb = document.getElementById("incBarFeb");
-const incBarMar = document.getElementById("incBarMar");
-const incBarApr = document.getElementById("incBarApr");
-const incBarMay = document.getElementById("incBarMay");
-const incBarJun = document.getElementById("incBarJun");
-const incBarJul = document.getElementById("incBarJul");
-const incBarAug = document.getElementById("incBarAug");
-const incBarSep = document.getElementById("incBarSep");
-const incBarOct = document.getElementById("incBarOct");
-const incBarNov = document.getElementById("incBarNov");
-const incBarDec = document.getElementById("incBarDec");
-const incGraphJan = document.getElementById('incGraphJan');
-const incGraphFeb = document.getElementById('incGraphFeb');
-const incGraphMar = document.getElementById('incGraphMar');
-const incGraphApr = document.getElementById('incGraphApr');
-const incGraphMay = document.getElementById('incGraphMay');
-const incGraphJun = document.getElementById('incGraphJun');
-const incGraphJul = document.getElementById('incGraphJul');
-const incGraphAug = document.getElementById('incGraphAug');
-const incGraphSep = document.getElementById('incGraphSep');
-const incGraphOct = document.getElementById('incGraphOct');
-const incGraphNov = document.getElementById('incGraphNov');
-const incGraphDec = document.getElementById('incGraphDec');
+
+
+let allBars = [];
+let allGraphs = [];
+
+
+function resizeArrays() {
+    for (let i = 0; i < incBar.length; i++) {
+        allBars[i] = incBar[i].textContent;
+        allGraphs[i] = allBars[i];
+    }
+    const choppedArray = [];
+    for (let i = 0; i < allGraphs.length; i += 12) {
+        choppedArray.push(allGraphs.slice(i, i + 12));
+    }
+    console.log(choppedArray);
+ //   makeGraphs(choppedArray);
+ for (x of choppedArray) {
+    getAverageOfArray(x);
+ }
+}
+
+function getAverageOfArray(aveThis) {
+    
+    let aveIncome = 0;
+    for (x of aveThis) {
+        aveIncome += parseInt(x);
+    }
+    aveIncome = aveIncome/12;
+    aveIncome = Math.round(aveIncome * 100) / 100
+    moyenneTag.textContent = 'Moyenne : €' + aveIncome + "/mois";
+    console.log(aveIncome);
+makeGraphs(aveThis, aveIncome);
+}
+
+
+function makeGraphs (allAmounts ,incAve) {
+   
+    for (let i = 0; i < incGraph.length; i++) {
+        let tempAmt = parseInt(allAmounts[i]);
+        
+        if (tempAmt < (incAve*1.1) && tempAmt > (incAve*0.9)) {
+            incGraph[i].classList.remove("bg-transparent");
+            incGraph[i].classList.add("bg-info");
+        }else if (tempAmt > (incAve*1.1)) {
+            incGraph[i].classList.remove("bg-transparent");
+            incGraph[i].classList.add("bg-success");
+        }else if (tempAmt > (incAve*0.6) && tempAmt < (incAve*0.9)) {
+            incGraph[i].classList.remove("bg-transparent");
+            incGraph[i].classList.add("bg-warning");
+        }else {
+            incGraph[i].classList.remove("bg-transparent");
+            incGraph[i].classList.add("bg-danger");
+        }
+    
+    }
+}
+
+resizeArrays();
+
+
+
+
+
+
+/*
+
 const diaporama = document.getElementById("diaporama");
 const moyenneTag = document.getElementById("moyenneTag");
 
 function makeGraphs() {
-let allBars = [
-    incBarJan,
-    incBarFeb,
-    incBarMar,
-    incBarApr,
-    incBarMay,
-    incBarJun,
-    incBarJul,
-    incBarAug,
-    incBarSep,
-    incBarOct,
-    incBarNov,
-    incBarDec
-];
 
-let allGraphs = [
-    incGraphJan,
-    incGraphFeb,
-    incGraphMar,
-    incGraphApr,
-    incGraphMay,
-    incGraphJun,
-    incGraphJul,
-    incGraphAug,
-    incGraphSep,
-    incGraphOct,
-    incGraphNov,
-    incGraphDec    
-];
-let aveIncome = 0;
+
 for (let i = 0; i < allBars.length; i++) {
     allGraphs[i].value = allBars[i].textContent
     aveIncome += parseInt(allGraphs[i].value);
@@ -68,22 +86,7 @@ moyenneTag.textContent = 'Moyenne : €' + aveIncome + "/mois";
 
 console.log(aveIncome);
 
-for (x of allGraphs) {
-    if (x.value < (aveIncome*1.1) && x.value > (aveIncome*0.9)) {
-        x.classList.remove("bg-transparent");
-        x.classList.add("bg-info");
-    }else if (x.value > (aveIncome*1.1)) {
-        x.classList.remove("bg-transparent");
-        x.classList.add("bg-success");
-    }else if (x.value > (aveIncome*0.6) && x.value < (aveIncome*0.9)) {
-        x.classList.remove("bg-transparent");
-        x.classList.add("bg-warning");
-    }else {
-        x.classList.remove("bg-transparent");
-        x.classList.add("bg-danger");
-    }
 
-}
 
 }
 makeGraphs();
@@ -105,11 +108,11 @@ function displayScreenWidth() {
 }
 displayScreenWidth();
 
-if (parseInt(x.value) > aveIncome) {
+if (parseInt(x) > aveIncome) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-success");
     
-}else if (parseInt(x.value) > aveIncome*0.75) {
+}else if (parseInt(x) > aveIncome*0.75) {
     x.classList.remove("bg-transparent");
     x.classList.add("bg-warning");
 }else {
@@ -117,3 +120,4 @@ if (parseInt(x.value) > aveIncome) {
     x.classList.add("bg-danger");
 }
 */
+
