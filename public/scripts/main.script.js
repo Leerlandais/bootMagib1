@@ -8,32 +8,50 @@ let allBars = [];
 let allGraphs = [];
 
 
-
-function makeGraphs () {
+function resizeArrays() {
     for (let i = 0; i < incBar.length; i++) {
-    allBars[i] = incBar[i].textContent;
-    allGraphs[i] = allBars[i];
+        allBars[i] = incBar[i].textContent;
+        allGraphs[i] = allBars[i];
+    }
+    const choppedArray = [];
+    for (let i = 0; i < allGraphs.length; i += 12) {
+        choppedArray.push(allGraphs.slice(i, i + 12));
+    }
+    console.log(choppedArray);
+ //   makeGraphs(choppedArray);
+ for (x of choppedArray) {
+    getAverageOfArray(x);
+ }
 }
+
+function getAverageOfArray(aveThis) {
     
     let aveIncome = 0;
-    for (x of allGraphs) {
+    for (x of aveThis) {
         aveIncome += parseInt(x);
     }
     aveIncome = aveIncome/12;
     aveIncome = Math.round(aveIncome * 100) / 100
     moyenneTag.textContent = 'Moyenne : €' + aveIncome + "/mois";
     console.log(aveIncome);
+makeGraphs(aveIncome);
+}
+
+
+function makeGraphs (incAve) {
+   
+
 
     for (let i = 0; i < incGraph.length; i++) {
         let tempAmt = parseInt(allGraphs[i]);
         console.log(tempAmt);
-        if (tempAmt < (aveIncome*1.1) && tempAmt > (aveIncome*0.9)) {
+        if (tempAmt < (incAve*1.1) && tempAmt > (incAve*0.9)) {
             incGraph[i].classList.remove("bg-transparent");
             incGraph[i].classList.add("bg-info");
-        }else if (tempAmt > (aveIncome*1.1)) {
+        }else if (tempAmt > (incAve*1.1)) {
             incGraph[i].classList.remove("bg-transparent");
             incGraph[i].classList.add("bg-success");
-        }else if (tempAmt > (aveIncome*0.6) && tempAmt < (aveIncome*0.9)) {
+        }else if (tempAmt > (incAve*0.6) && tempAmt < (incAve*0.9)) {
             incGraph[i].classList.remove("bg-transparent");
             incGraph[i].classList.add("bg-warning");
         }else {
@@ -44,9 +62,7 @@ function makeGraphs () {
     }
 }
 
-
-
-makeGraphs();
+resizeArrays();
 
 
 
