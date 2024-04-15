@@ -34,17 +34,15 @@ function getAverageOfArray(aveThis) {
     aveIncome = Math.round(aveIncome * 100) / 100
     moyenneTag.textContent = 'Moyenne : €' + aveIncome + "/mois";
     console.log(aveIncome);
-makeGraphs(aveIncome);
+makeGraphs(aveThis, aveIncome);
 }
 
 
-function makeGraphs (incAve) {
+function makeGraphs (allAmounts ,incAve) {
    
-
-
     for (let i = 0; i < incGraph.length; i++) {
-        let tempAmt = parseInt(allGraphs[i]);
-        console.log(tempAmt);
+        let tempAmt = parseInt(allAmounts[i]);
+        
         if (tempAmt < (incAve*1.1) && tempAmt > (incAve*0.9)) {
             incGraph[i].classList.remove("bg-transparent");
             incGraph[i].classList.add("bg-info");
